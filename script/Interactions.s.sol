@@ -5,16 +5,14 @@ pragma solidity ^0.8.18;
 import {BasicNft} from "src/BasicNft.sol";
 import {Script} from "forge-std/Script.sol";
 import {DevOpsTools} from "foundry-devops/src/DevOpsTools.sol";
-import {BasicNft} from "src/BasicNft.sol";
 
 // contract
-contract Interactions is Script {
-
-// global variables
+contract MintBasicNft is Script {
+    // global variables
     string public constant PUG_URL =
         "ipfs://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4/?filename=0-PUG.json";
 
-// functions
+    // functions
     function run() external {
         address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment(
             "BasicNft",
